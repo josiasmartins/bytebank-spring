@@ -49,7 +49,7 @@ public class CourseController {
     @ResponseStatus(code = HttpStatus.CREATED)
     // @ResponseEntity<Course>: outra forma de setar o status code
     public Course create(@RequestBody Course course) {
-        System.out.println(course.getName());
+        System.out.println(course.getValor());
         // save: metodo para salvar informaçções no banco de dados;
         // return ResponseEntity
         //     .status(HttpStatus.CREATED)

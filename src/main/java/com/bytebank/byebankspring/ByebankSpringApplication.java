@@ -24,8 +24,8 @@ public class ByebankSpringApplication {
 			courseRepository.deleteAll();
 
 			Course c = new Course();
-			c.setName("Angular com Spring");
-			c.setCategory("front-end");
+			c.setValor("121212");
+			c.setDestino("212121");
 
 			courseRepository.save(c);
 		};
