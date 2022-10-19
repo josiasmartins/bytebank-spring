@@ -5,8 +5,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.bytebank.byebankspring.model.Course;
-import com.bytebank.byebankspring.repository.CourseRepository;
+import com.bytebank.byebankspring.model.Transferencia;
+import com.bytebank.byebankspring.repository.TransferenciaRepository;
 
 @SpringBootApplication
 public class ByebankSpringApplication {
@@ -18,16 +18,18 @@ public class ByebankSpringApplication {
 
 	// @Bean: gerencia todo o ciclo de vida
 	@Bean
-	CommandLineRunner initDatabase(CourseRepository courseRepository) {
+	CommandLineRunner initDatabase(TransferenciaRepository courseRepository) {
 		// funcão lambda
 		return args -> {
-			courseRepository.deleteAll();
+			// courseRepository.deleteAll();
+			courseRepository.findAll();
+			System.out.println("ibag: "+courseRepository.findAll());
 
-			Course c = new Course();
-			c.setValor("121212");
-			c.setDestino("212121");
+			// Transferencia c = new Transferencia();
+			// c.setValor("121212");
+			// c.setDestino("212121");
 
-			courseRepository.save(c);
+			// courseRepository.save(c);
 		};
 	}
 

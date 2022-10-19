@@ -19,8 +19,8 @@ import lombok.Data;
 @Data
 // @Entity: faz o mapeamento com o banco de dados
 @Entity
-// @Table(name = "cursos")
-public class Course {
+@Table(name = "transferencia")
+public class Transferencia {
     // Id: chave primária
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -38,5 +38,4 @@ public class Course {
 
     @GeneratedValue(strategy = GenerationType.AUTO)
     private LocalDateTime data;
-
 }

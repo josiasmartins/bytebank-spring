@@ -17,28 +17,28 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bytebank.byebankspring.model.Course;
-import com.bytebank.byebankspring.repository.CourseRepository;
+import com.bytebank.byebankspring.model.Transferencia;
+import com.bytebank.byebankspring.repository.TransferenciaRepository;
 
 import lombok.AllArgsConstructor;
 
 // @RestController: diz para classe que contem um endpoint
 @RestController
 // @RequestMapping: diz o endpoint
-@RequestMapping("/api/courses")
+@RequestMapping("/api/transferencia")
 // @Component: cria uma instância e gerencia o ciclo de vida
 // @Component
 // @AllArgsConstructor: injeta o service atraves do constructor
 @AllArgsConstructor
-public class CourseController {
+public class TransferenciaController {
     // @Autowired: usado para injetar o service. De acordo com as boas, utila o contructor no lugar dele
     // @Autowired
-    private final CourseRepository courseRepository;
+    private final TransferenciaRepository courseRepository;
 
     // LIst: retorna uma lista 
     // outra forma de fazer: @RequestMapping(method = Request.GET)
     @GetMapping
-    public @ResponseBody List<Course> list() {
+    public @ResponseBody List<Transferencia> list() {
         return courseRepository.findAll();
     }
 
@@ -48,7 +48,7 @@ public class CourseController {
     // outra forma de retornar o status code correto
     @ResponseStatus(code = HttpStatus.CREATED)
     // @ResponseEntity<Course>: outra forma de setar o status code
-    public Course create(@RequestBody Course course) {
+    public Transferencia create(@RequestBody Transferencia course) {
         System.out.println(course.getValor());
         // save: metodo para salvar informaçções no banco de dados;
         // return ResponseEntity
